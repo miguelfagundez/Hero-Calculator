@@ -18,10 +18,10 @@ fun CalculatorButton(
     symbol: String,
     // Button info such as background color, shape, spacing, etc
     info: Modifier,
-    // Button Size by default 36 units
-    btnSize: TextUnit = 36.sp,
-    // Button symbol color by default is white
-    symbolColor: Color = Color.White,
+    // Text Size by default 36 units
+    textSize: TextUnit = 36.sp,
+    // Text symbol color by default is white
+    textColor: Color = Color.White,
     // Button action/event
     onClick: () -> Unit
 ){
@@ -36,8 +36,8 @@ fun CalculatorButton(
     ){
         Text(
             text = symbol,
-            fontSize = btnSize,
-            color = symbolColor
+            fontSize = textSize,
+            color = textColor
         )
     }
 }
