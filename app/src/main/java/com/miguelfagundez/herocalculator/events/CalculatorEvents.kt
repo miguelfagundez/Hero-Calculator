@@ -4,10 +4,9 @@ package com.miguelfagundez.herocalculator.events
 // Delete symbols, make calculations, etc
 sealed class CalculatorEvents() {
     data class Number(val number: Int): CalculatorEvents()
-    data class Operation(val operation: Operation?): CalculatorEvents()
+    data class Operation(val operation: CalculatorOperation?): CalculatorEvents()
     object Delete: CalculatorEvents()
     object Clear: CalculatorEvents()
     object Decimal: CalculatorEvents()
-    object Porcentage: CalculatorEvents()
     object Result: CalculatorEvents()
 }

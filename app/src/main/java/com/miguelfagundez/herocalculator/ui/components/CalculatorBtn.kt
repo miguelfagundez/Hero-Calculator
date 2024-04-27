@@ -29,7 +29,7 @@ fun CalculatorButton(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .clip(CircleShape)
-            .clickable { onClick }
+            .clickable { onClick() }
             // Apply our modifier at the end of component properties.
             // First circle shape and onclick event is applied
             .then(info)
