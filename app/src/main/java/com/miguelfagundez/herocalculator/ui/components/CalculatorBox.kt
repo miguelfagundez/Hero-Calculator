@@ -8,14 +8,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.DarkGray
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,15 +39,14 @@ fun CalculatorBox(
                 .align(Alignment.BottomCenter),
             verticalArrangement = Arrangement.spacedBy(btnSpacing)
         ) {
-            Text( text = state.numberOne + (state.operator?.symbol ?: "") + state.numberTwo,
-                textAlign = TextAlign.End,
+            AutoResizedText(
+                text = state.numberOne + (state.operator?.symbol ?: "") + state.numberTwo,
+                style = MaterialTheme.typography.displayLarge.copy(
+                    fontSize = 80.sp
+                ),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 32.dp),
-                fontWeight = FontWeight.Light,
-                fontSize = 80.sp,
-                color = Color.White,
-                maxLines = 2
             )
             // Calculator Buttons in 5 rows
             Row(
