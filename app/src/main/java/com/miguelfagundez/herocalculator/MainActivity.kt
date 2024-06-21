@@ -74,7 +74,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val items = CalculatorDrawer.navigationItems
 
-            Surface(
+            /*Surface(
                 modifier = Modifier
                     .fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
@@ -142,25 +142,25 @@ class MainActivity : ComponentActivity() {
                     ) {
                     }
                 }
+            }*/
+            HeroCalculatorTheme {
+                // A surface container using the 'background' color from the theme
+                val viewModel = viewModel<CalculatorViewModel>()
+                val state = viewModel.state
+                // Spacing between buttons
+                val spacing = 8.dp
+
+                // Calculator view
+                CalculatorBox(
+                    state = state,
+                    action = viewModel::action,
+                    btnSpacing = spacing,
+                    info = Modifier
+                        .fillMaxSize()
+                        .background(MediumGray)
+                        .padding(16.dp)
+                )
             }
-//            HeroCalculatorTheme {
-//                // A surface container using the 'background' color from the theme
-//                val viewModel = viewModel<CalculatorViewModel>()
-//                val state = viewModel.state
-//                // Spacing between buttons
-//                val spacing = 8.dp
-//
-//                // Calculator view
-//                CalculatorBox(
-//                    state = state,
-//                    action = viewModel::action,
-//                    btnSpacing = spacing,
-//                    info = Modifier
-//                        .fillMaxSize()
-//                        .background(MediumGray)
-//                        .padding(16.dp)
-//                )
-//            }
         }
     }
 }
